@@ -1,17 +1,12 @@
 package org.zerock.controller;
 
 
-import java.io.PrintWriter;
-import java.util.logging.Logger;
 
-import javax.print.DocFlavor.STRING;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.spi.LoggerFactory;
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -77,11 +72,16 @@ public class InstarJoinController {
 		return Integer.toString(result);
 	}
 	
+	
 	@GetMapping("/image/feed")
 	public String feed() {
 		return "/image/feed";
 	}
 	
+	@PostMapping("/image/feed")
+	public String feedd() {
+		return "/image/feed";
+	}
 	@GetMapping("/user/user")
 	public String user() {
 		return "/user/user";
@@ -100,6 +100,14 @@ public class InstarJoinController {
 	public String imageUpload() {
 		return "/upload/imageUpload";
 	}
+	@GetMapping("/image/upload")
+	public String upload() {
+		return "/image/upload";
+	}
 	
+	@PostMapping("/image/upload")
+	public String upload1() {
+		return "/image/upload";
+	}
 
 }
