@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.InstarMapper">
+	<insert id = "register">
+		insert into instar_user(userid, password, email, username, user_num)
+		values (#{userID},#{password},#{email},#{userName}, #{user_num})
+	</insert>
+	<select id="idCheck" resultType="int">
+		select count(*) from instar_user
+		where userid=#{userID}
+	</select>
+	<select id="login" resultType="org.zerock.domain.InstarVO"> 
+		select * from instar_user where userid=#{userID} 
+	</select>
+</mapper>
